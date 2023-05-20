@@ -1,0 +1,8 @@
+<section>
+  <h2>Rutas disponibles</h2>
+  <ul *ngFor="let route of routes">
+    <li>
+      <a [routerLink]="route.path">{{route.path}}</a>
+    </li>
+</ul>
+</section>

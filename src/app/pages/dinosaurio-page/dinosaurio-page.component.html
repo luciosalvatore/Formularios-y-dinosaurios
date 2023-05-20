@@ -1,0 +1,23 @@
+<section>
+
+  <button (click)="onClick()" class="btn btn-primary">Buscar Dinosaurio</button>
+  <div class="container" *ngIf="dinosaurios.length > 0; else elseNotDone">
+    <div class="row" *ngFor="let dinosaurio of dinosaurios">
+        <div class="card col-md-4">
+          <div class="card-header">
+            {{dinosaurio.nombre}}
+          </div>
+          <div class="card-body">
+            <!-- el alt es para los discapacitados visuales y les lee el contenido de "alt"-->
+            <img src={{dinosaurio.imagen}} alt={{dinosaurio.nombre}} class="flex" width="150" height="150">
+            <p>alt: {{dinosaurio.altura}}m</p>
+            <p>Tipo de alimentacion: {{dinosaurio.alimentacion}}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <ng-template #elseNotDone>
+    Los Dinosaurios no fueron procesados!
+  </ng-template>
+</section>
+

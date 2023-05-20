@@ -1,0 +1,11 @@
+<form [formGroup]="formDinosaurio" (ngSubmit)="onSubmit($event)">
+  <label>Nombre</label><input type="text" formControlName="nombre" >
+  <label>Alimentacion</label><input type="text" formControlName="alimentacion">
+  <label>Imagen</label><input type="text" formControlName="imagen">
+  <label>Altura</label><input type="number" formControlName="altura">
+  <button type="submit">Agregar</button>
+</form>
+
+
+
+

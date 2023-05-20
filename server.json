@@ -1,0 +1,78 @@
+{
+  "emails": [
+    {
+      "email": "andres@gmail.com",
+      "id": 1
+    },
+    {
+      "email": "lucio@gmail.com",
+      "id": 2
+    }
+  ],
+  "dinosaurios": [
+    {
+      "nombre": "Tiranosaurio Rex",
+      "altura": 3,
+      "alimentacion": "carnivoro",
+      "id": 1,
+      "imagen": "https://cdn.pixabay.com/photo/2021/05/26/18/28/dinosaur-6286030_1280.png"
+    },
+    {
+      "nombre": "Spinosaurus",
+      "altura": 2,
+      "alimentacion": "carnivoro",
+      "id": 2,
+      "imagen": "https://cdn.pixabay.com/photo/2018/02/04/09/21/dinosaur-3129391_1280.png"
+    },
+    {
+      "nombre": "Velociraptor",
+      "altura": 1,
+      "alimentacion": "carnivoro",
+      "id": 3,
+      "imagen": "https://cdn.pixabay.com/photo/2016/11/10/16/55/dinosaur-1814717_1280.jpg"
+    },
+    {
+      "nombre": "Triceratops",
+      "altura": 2,
+      "alimentacion": "herviboro",
+      "id": 4,
+      "imagen": "https://cdn.pixabay.com/photo/2023/02/19/21/42/triceratops-7801104_1280.png"
+    },
+    {
+      "nombre": "Estegosaurio",
+      "altura": 2,
+      "alimentacion": "herviboro",
+      "id": 5,
+      "imagen": "https://cdn.pixabay.com/photo/2018/02/04/10/04/stegosaurus-3129447_1280.png"
+    },
+    {
+      "nombre": "Argentinosaurus",
+      "altura": 40,
+      "alimentacion": "herviboro",
+      "imagen": "https://images.dinosaurpictures.org/Argentinosaurus-1_eb84.jpg",
+      "id": 6
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "mail": "andres@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "mail": "lucio@gmail.com",
+      "password": "qwer"
+    },
+    {
+      "mail": "pepe@gmail.com",
+      "password": "asd123",
+      "id": 3
+    },
+    {
+      "mail": "luis@gmail.com",
+      "password": "0007",
+      "id": 4
+    }
+  ]
+}

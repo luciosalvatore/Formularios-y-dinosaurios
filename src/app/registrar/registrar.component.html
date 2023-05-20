@@ -1,0 +1,9 @@
+<h1>
+  Registarse
+</h1>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit($event)">
+  <label>Mail</label><input type="text" formControlName="mail"> <br> <!-- nunca usar "br!!!" mala practica!!-->
+  <label>Contraseña</label><input type="text" formControlName="password">
+  <button type="submit">Registrarse</button>
+</form>
+

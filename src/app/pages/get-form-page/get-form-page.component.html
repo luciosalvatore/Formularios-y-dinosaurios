@@ -1,0 +1,26 @@
+<section>
+  <form [formGroup]="getForm" (ngSubmit)="onSubmit($event)" >
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        class="form-control form-control-lg"
+        id="email"
+        placeholder="Enter email"
+        formControlName="email"
+      >
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  <h2 *ngIf="resultForm !== ''">{{resultForm}}</h2>
+  <button (click)="onClick()" class="btn btn-primary">Ver lista</button>
+  <ul *ngIf="emails.length > 0; else elseNotDone">
+    <li *ngFor="let email of emails">
+        {{email.email}}
+    </li>
+  </ul>
+  <ng-template #elseNotDone>
+    Los emails aun no han sido procesados!
+  </ng-template>
+</section>
