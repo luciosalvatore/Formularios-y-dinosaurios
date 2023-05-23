@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { LoginService, Usuario } from 'src/app/services/login.service';
+import { User, AuthService } from 'src/app/services/auth.service';
 import { FormGroup } from '@angular/forms';
 import { filter } from 'rxjs';
 
@@ -12,9 +12,9 @@ import { filter } from 'rxjs';
 export class LoginComponent {
 
 formulario:FormGroup
-usuarios:Usuario[] = []
+usuarios:User[] = []
 
-constructor(private formBuilder:FormBuilder,private service: LoginService){
+constructor(private formBuilder:FormBuilder,private service: AuthService){
 this.formulario = formBuilder.group({
   mail: '',
   password: '',
@@ -23,17 +23,20 @@ this.formulario = formBuilder.group({
 
 handleOnSubmit(event:Event){
   event.preventDefault()
- // console.log(this.formulario.get('mail').value)
-  this.service.getAllUsuarios().subscribe(usuarios => {
-    const filterUser = usuarios.filter(usuario => usuario.mail === this.formulario.get('mail')?.value)[0]
-    if(filterUser && filterUser.password === this.formulario.get('password')?.value){
-      alert('logeado')
-    }
-    else{
-      alert('credenciales incorrectas')
-    }
-  })
+
+  try{
+    this.service.login({mail: this.Email,password: this.Password})
+  }catch(e: any) {
+    alert(e.message)
+  }
 }
 
+public get Email():string {
+  return this.formulario.get('mail')?.value
+}
+
+public get Password():string {
+  return this.formulario.get('password')?.value
+}
 
 }

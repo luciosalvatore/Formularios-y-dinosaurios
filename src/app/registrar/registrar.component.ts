@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Usuario } from '../services/login.service';
-import { RegistrarService } from '../services/registrar.service';
+import { AuthService, User } from '../services/auth.service';
 
 @Component({
   selector: 'app-registrar',
@@ -11,7 +10,7 @@ import { RegistrarService } from '../services/registrar.service';
 export class RegistrarComponent {
 
   formulario:FormGroup
-  constructor(private FormBuilder:FormBuilder, private registrar:RegistrarService){
+  constructor(private FormBuilder:FormBuilder, private registrar:AuthService){
     this.formulario = FormBuilder.group({
       mail: '',
       password: '',
@@ -19,18 +18,7 @@ export class RegistrarComponent {
   }
     onSubmit(event:Event){
       event.preventDefault()
-      const usuario:Usuario = {
-        mail: this.formulario.get('mail')?.value,
-        password: this.formulario.get('password')?.value
-      }
-      this.registrar.postUsuario(usuario).subscribe(u=> {
-        if(u){
-        alert('Usuario registrado!')
-      }
-      else{
-        alert('Falla en registrarlo! :(, intentelo de nuevo')
-      }
-      })
+
     }
 
 

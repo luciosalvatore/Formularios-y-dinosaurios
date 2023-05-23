@@ -6,6 +6,7 @@ import { DinosaurioPageComponent } from "./pages/dinosaurio-page/dinosaurio-page
 import { FormularioDinosaurioComponent } from "./pages/formulario-dinosaurio/formulario-dinosaurio.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { RegistrarComponent } from "./registrar/registrar.component";
+import { AuthGuard } from "./guards/auth.guard";
 
 export const PATHS = {
   INDEX: '',
@@ -21,7 +22,7 @@ export const routes: Routes = [
   { path: PATHS.GET_FORM, component: GetFormPageComponent },
   { path: PATHS.POST_FORM, component: PostFormPageComponent },
   { path: PATHS.INDEX, component: IndexPageComponent },
-  { path: PATHS.DINOSAURIO, component: DinosaurioPageComponent},
+  { path: PATHS.DINOSAURIO, component: DinosaurioPageComponent, canActivate: [AuthGuard]},
   { path: PATHS.FORMULARIO, component: FormularioDinosaurioComponent},
   { path: PATHS.LOGIN, component: LoginComponent},
   { path: PATHS.REGISTRAR, component: RegistrarComponent},

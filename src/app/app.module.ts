@@ -14,6 +14,7 @@ import { DinosaurioPageComponent } from './pages/dinosaurio-page/dinosaurio-page
 import { FormularioDinosaurioComponent } from './pages/formulario-dinosaurio/formulario-dinosaurio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
